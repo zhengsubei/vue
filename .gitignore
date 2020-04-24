@@ -1,0 +1,10 @@
+node_modules/
+dist/
+coverage/
+.idea
+*.log
+*sublime*
+**/.DS_Store
+*.bat
+dist.zip
+npm-shrinkwrap.json
