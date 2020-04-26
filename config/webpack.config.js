@@ -1,6 +1,6 @@
 const path = require('path');
 const webpack = require('webpack');
-const constant = require('./config/constant');
+const constant = require('./constant');
 const HtmlWebpackplugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 module.exports = {
@@ -9,10 +9,10 @@ module.exports = {
         port: 8080,
     },
     mode : 'development',
-    entry: './src/main.js',
+    entry: './../src/main.js',
     output: {
         filename: 'index.js',
-        path: path.join(__dirname,'./dist')
+        path: path.join(__dirname,'./../dist')
     },
     module: {
         rules: [
@@ -22,7 +22,8 @@ module.exports = {
                 use: {
                     loader: 'babel-loader'
                 }
-            },{
+            },
+            {
                 test: /\.vue$/,
                 use:[
                     {
@@ -57,15 +58,16 @@ module.exports = {
                         ]
                     }
                 }]
-            },{
-                test: /\.(png|jpg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
-                use: [{
-                    loader: 'url-loader',
-                    options: {
-                        limit: 10000
-                    }
-                }]
-            }
+            },
+            // {
+            //     test: /\.(png|jpg|gif|eot|ttf|woff|woff2|svg|svgz)(\?.+)?$/,
+            //     use: [{
+            //         loader: 'url-loader',
+            //         options: {
+            //             limit: 10000
+            //         }
+            //     }]
+            // }
         ]
     },
     plugins: [
